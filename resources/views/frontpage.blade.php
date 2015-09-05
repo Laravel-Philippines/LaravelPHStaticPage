@@ -40,6 +40,7 @@
     <header class="header-image">
         <div class="headline">
             <div class="container">
+                <img src="img/laravelninjalogo1.png">
                 <h1>LaravelPH.org</h1>
                 <h2>Will Knock Your Socks Off . Coming soon.</h2>
             </div>
