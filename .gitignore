@@ -1,4 +1,5 @@
 /vendor
+/laravel
 /node_modules
 Homestead.yaml
 .env
