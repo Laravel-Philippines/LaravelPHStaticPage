@@ -2,8 +2,10 @@
 <html>
 <head>
 <title>LaravelPH community</title>
+<meta  name="description" content="Laravel Philippines Community" />
+<meta property="og:title" content="Laravel Philippines" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="public/css/one-page-wonder.css"></head>
+<link rel="stylesheet" href="http://laravelph.org/css/one-page-wonder.css"></head>
 <body>
 
     <!-- Navigation -->
