@@ -3,3 +3,10 @@
 /node_modules
 Homestead.yaml
 .env
+startup.sh
+/config/database.php
+.env.*.php
+.env.php
+/bootstrap/compiled.php
+.htaccess
+.codio
