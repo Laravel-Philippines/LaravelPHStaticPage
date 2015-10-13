@@ -10,6 +10,8 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
+    protected $redirectPath = '/dashboard';
+    protected $loginPath = 'auth/login';
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -22,6 +24,8 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    
+    
 
     /**
      * Create a new authentication controller instance.
@@ -62,4 +66,5 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    
 }

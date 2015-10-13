@@ -17,7 +17,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">LaravelPH</a>
+                <a class="navbar-brand" href="/">LaravelPH</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -28,7 +28,9 @@
                     <li>
                         <a href="https://www.facebook.com/groups/laravelph">Join</a>
                     </li>
-
+                    <li>
+                        <a href="/auth/login">Login</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
