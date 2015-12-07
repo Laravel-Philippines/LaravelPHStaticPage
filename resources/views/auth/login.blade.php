@@ -4,8 +4,6 @@
 
 @section('title', 'Login')
 
-@endsection
-
 @section('content')
 
 <div class="span12 text-left">
@@ -43,7 +41,8 @@
     <div>
         <button type="submit" class="btn btn-primary">Login</button>  <a href="/password/email">Forgot Your Password? </a>
     </div>
-        
+    <hr>     
+    <div class="form-group"><a href="register">Register Here</a> if you are not a member yet</div>    
     </div>     
         
 </form>

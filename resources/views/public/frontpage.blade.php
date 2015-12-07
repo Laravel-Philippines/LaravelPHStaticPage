@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="public/css/one-page-wonder.css"></head>
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -17,7 +16,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">LaravelPH</a>
+                <a class="" href="/"><img src="img/laravel50px.png" alt="LaravelPH"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -37,23 +36,19 @@
         </div>
         <!-- /.container -->
     </nav>
-
     <!-- Full Width Image Header -->
     <header class="header-image">
         <div class="headline">
             <div class="container">
-                <img src="img/laravelninjalogo1.png">
-                <h1>LaravelPH.org</h1>
-                <h2>Will Knock Your Socks Off . Coming soon.</h2>
+                 <h1><img src="http://i344.photobucket.com/albums/p334/ken_garcia/laravelninjalogo1.png" alt="laravel ninja"> LaravelPH.org</h1>
+                <!-- <h2>Will Knock Your Socks Off . Coming soon.</h2> -->
             </div>
         </div>
     </header>
 
     <!-- Page Content -->
     <div class="container">
-
-       <hr class="featurette-divider">
-    
+        <hr class="featurette-divider"> 
         <div class="row">
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
@@ -65,8 +60,6 @@
                   </div>
                 </div>
               </div>
-
-
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">

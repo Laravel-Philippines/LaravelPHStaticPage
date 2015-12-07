@@ -53,8 +53,8 @@ return [
     | used globally for all e-mails that are sent by your application.
     |
     */
-
-    'from' => ['address' => null, 'name' => null],
+       'from' => ['address' => 'FORGOTPW_MAILFROM', 'name' => 'FORGOTPW_MAILFROMNAME'],
+    // 'from' => ['address' => null, 'name' => null],
     // 'from' => ['address' => 'goryo.webdev@gmail.com', 'name' => 'Goryo'],
     
     /*

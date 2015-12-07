@@ -12,11 +12,11 @@
 ******Resource controllers should be at the bottom********
 */
 Route::get('/', function () {
-    return view('frontpage');
+    return view('public/frontpage');
 });
 
 Route::get('home', function () {
-    return view('frontpage');
+    return view('public/frontpage');
 });
 
 // Authentication routes...
@@ -46,5 +46,14 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 //Members Routes
 Route::get('dashboard', [
     'middleware' => 'auth',
-    'uses' => 'ProfileController@show'
+    'uses' => 'MemberDashboardController@show'    
 ]);
+
+//Events Routes
+// show new post form
+ Route::get('new-event',['middleware' => 'auth', 'uses' => 'EventController@create' ]);
+ // save new post
+ Route::post('new-event','EventController@store');
+
+
+// Route::get('my-all-events','UserController@user_events_all');

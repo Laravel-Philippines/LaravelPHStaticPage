@@ -1,9 +1,12 @@
 <!doctype html>
 <html>
 <head>
-<title>LaravelPH community - @yield('title')</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="../public/css/one-page-wonder.css"></head>
+    <title>LaravelPH community - @yield('title')</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/one-page-wonder.css">
+    <link rel="stylesheet" href="../public/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../public/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+</head>
 <body>
 
     <!-- Navigation -->
@@ -17,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">LaravelPH</a>
+                <a class="" href="/"><img src="../img/laravel50px.png" alt="LaravelPH"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -25,12 +28,19 @@
                     <li>
                         <a href="#about">About</a>
                     </li>
+
                     <li>
                         <a href="https://www.facebook.com/groups/laravelph">Join</a>
                     </li>
-                    <li>
-                        <a href="/auth/login">Login</a>
-                    </li>
+                     @if (!Auth::check()) 
+                        <li>   
+                            <a href="/auth/login">Login</a>
+                        </li>
+                    @else
+                        <li>   
+                            <a href="/auth/logout">Logout</a>
+                        </li>
+                    @endif
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -60,5 +70,17 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+    <script type="text/javascript" src="../public/bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="../public/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    
+    <script type="text/javascript">
+         $(function () {
+             $('#datetimepicker12').datetimepicker({
+                 inline: true,
+                 sideBySide: true
+             });
+         });
+    </script>
 
 </body>
