@@ -6,7 +6,7 @@
            <div class="row">
 <div class="span12 text-left">
 <div class="col-sm-6">
-    <h1>Create Event</h1>
+    <h1>Edit Event</h1>
     
     @if (count($errors) > 0)
         <div class="alert alert-danger">
@@ -18,7 +18,7 @@
         </div>
     @endif
 
-    <form action="/new-event" method="post">
+    <form action="/edit-event" method="post">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="form-group">
             <label for="event_title">Event Title</label>  

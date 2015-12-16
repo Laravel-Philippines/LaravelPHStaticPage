@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../public/css/one-page-wonder.css">
     <link rel="stylesheet" href="../public/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../public/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="../public/css/custom.css">
 </head>
 <body>
 
@@ -48,11 +49,10 @@
         <!-- /.container -->
     </nav>
     
-       <div class="container">
-           <div class="row">
-            @yield('content')
-           </div>    
 
+            @yield('content')
+
+    
         <!-- Footer -->
         <footer>
             <div class="row">
@@ -62,7 +62,6 @@
             </div>
         </footer>
 
-    </div>
     <!-- /.container -->
 
     <!-- jQuery -->
@@ -73,14 +72,17 @@
   
     <script type="text/javascript" src="../public/bower_components/moment/min/moment.min.js"></script>
     <script type="text/javascript" src="../public/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-    
+
     <script type="text/javascript">
-         $(function () {
-             $('#datetimepicker12').datetimepicker({
-                 inline: true,
-                 sideBySide: true
-             });
-         });
+        $(function () {
+            $('#datetimepicker12a, #datetimepicker12b').each(function(){$(this).datetimepicker({
+                inline: true,
+                sideBySide: true
+            });
+                                                                       });});
+        $(function() {
+            $("form:not(.filter) :input:visible:enabled:first").focus();
+        });
     </script>
 
 </body>

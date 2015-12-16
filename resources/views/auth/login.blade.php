@@ -5,7 +5,8 @@
 @section('title', 'Login')
 
 @section('content')
-
+       <div class="container">
+           <div class="row">
 <div class="span12 text-left">
     <form method="POST" action="/auth/login" class="form-signin">
     {!! csrf_field() !!}
@@ -48,5 +49,7 @@
 </form>
     
 </div>
+           </div>
+
 @endsection
 

@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+       <div class="container">
+           <div class="row">
 <div class="span12 text-left">
 <div class="col-sm-6">
 <form method="POST" action="/auth/register">
@@ -51,5 +53,5 @@
     </div>
 </form>
 </div>
-</div>
+               </div></div>
 @endsection

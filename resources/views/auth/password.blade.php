@@ -7,7 +7,8 @@
 @endsection
 
 @section('content')
-  
+         <div class="container">
+           <div class="row">
 <div class="span12 text-left">
     <div class="col-sm-6">
     <h1>Forgot Password</h1> 
@@ -26,7 +27,7 @@
     </div>
     </form>
     </div>
-</div>
+               </div></div>
 @endsection
 
 

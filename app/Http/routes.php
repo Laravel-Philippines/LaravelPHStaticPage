@@ -50,10 +50,12 @@ Route::get('dashboard', [
 ]);
 
 //Events Routes
-// show new post form
+// show new event form
  Route::get('new-event',['middleware' => 'auth', 'uses' => 'EventController@create' ]);
- // save new post
- Route::post('new-event','EventController@store');
+// save new event
+Route::post('new-event','EventController@store');
+// edit
+Route::get('events/{slug}/edit',['middleware' => 'auth', 'uses' => 'EventController@edit' ]);
 
 
 // Route::get('my-all-events','UserController@user_events_all');

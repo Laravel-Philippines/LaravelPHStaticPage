@@ -20,7 +20,7 @@ class ChangeEventdatetimeToEvents extends Migration
             $table->dropColumn('event_endtime');
             
             $table->dateTime('event_startdatetime');
-            $table->dateTime('event_starttimetime');
+            $table->dateTime('event_enddatetime');
 
         });   
         

@@ -39,16 +39,30 @@ class EventController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        //validate
         $this->validate($request, [
-        'event_title' => 'required|min:10|max:255',
+        'event_title' => 'required||unique:events,title|min:10|max:255',
         'event_description' => 'min:10|max:500|required',
+        'event_startdate' => 'required|date',
+        'event_enddate' => 'required|date',
+        'event_location' => 'required|max:255',    
          ]);
         
+         //format dates for mysql
+        $event_startdate = $request->event_startdate;
+        $event_startdate_formatted = date('Y-m-d H:i', strtotime($event_startdate));
+        $event_enddate = $request->event_enddate;
+        $event_enddate_formatted = date('Y-m-d H:i', strtotime($event_enddate));
+        
+        //insert
         $event = new Event;
         $event->title = $request->event_title;
         $event->description = $request->event_description;
+        $event->event_startdatetime = $event_startdate_formatted;
+        $event->event_enddatetime = $event_enddate_formatted;
         $event->user_id = $request->user()->id;
+        $event->slug = str_slug($request->event_title);
         $event->save();
         return redirect('dashboard');
     }
@@ -70,9 +84,31 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,$slug)
     {
-        //
+         /*  
+        $post = Posts::where('slug',$slug)->first();
+        if($post && ($request->user()->id == $post->author_id || $request->user()->is_admin()))
+          return view('posts.edit')->with('post',$post);
+        return redirect('/')->withErrors('you have not sufficient permissions');
+        
+        
+        return $slug;
+        
+        */
+        $event = Event::where('slug',$slug)->first();
+        
+        // return var_dump($event);
+        
+        return view('events.edit')->with('event',$event);
+        
+        /*
+        if(!$event && ($request->user()->id == $event->user_id))
+            
+          return view('posts.edit')->with('post',$event);
+        
+        return redirect('/dashboard')->withErrors('you have not sufficient permissions');
+        */
     }
 
     /**
