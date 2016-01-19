@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Create Event')
+@section('title', 'Edit Event')
 
 @section('content')
        <div class="container">
@@ -18,30 +18,34 @@
         </div>
     @endif
 
-    <form action="/edit-event" method="post">
+    <form action="/events/{{ $event->slug }}/edit" method="post">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
+      <!-- TODO -->
+      <input type="hidden" name="event_id" value="{{ $event->id }}{{ old('event_id') }}">
+      
+      
       <div class="form-group">
             <label for="event_title">Event Title</label>  
-            <input required="required" value="{{ old('event_title') }}" placeholder="Enter title here" type="text" name = "event_title"class="form-control" />
+            <input required="required" value="@if(!old('event_title')){{ $event->title }} @endif{{ old('event_title') }}" placeholder="Enter title here" type="text" name = "event_title"class="form-control" />
       </div>
       
       <div class="form-group">
             <label for="event_description">Event Description</label>
-            <textarea required="required" name='event_description'class="form-control" placeholder="Enter details here (What is it about?)">{{ old('event_description') }}</textarea>
+            <textarea required="required" name='event_description'class="form-control" placeholder="Enter details here (What is it about?)">@if(!old('event_description')){{ $event->description }} @endif{{ old('event_description') }}</textarea>
       </div>
           
         <div class="form-group">
                 <label for="event_startdate">Start when?</label>
-                <input type="text" id="datetimepicker12a" name="event_startdate" />
+                <input type="text" id="datetimepicker12a" name="event_startdate" value="{{ $event->event_startdatetime->format('m/d/Y g:i A') }}" />
         </div>
         <div class="form-group">
                 <label for="event_enddate">End when?</label>
-                <input type="text" id="datetimepicker12b" name="event_enddate" />
+                <input type="text" id="datetimepicker12b" name="event_enddate" value="{{ $event->event_enddatetime->format('m/d/Y g:i A') }}" />
         </div>
        
         <div class="form-group">
             <label for="endevent_location">Where?</label>  
-            <input required="required" value="{{ old('event_location') }}" placeholder="Enter location here" type="text" name = "event_location"class="form-control" />
+            <input required="required" value="@if(!old('event_location')){{ $event->location }} @endif{{ old('event_location') }}" placeholder="Enter location here" type="text" name="event_location" class="form-control" />
         </div>
         
       <input type="submit" name='publish' class="btn btn-success" value = "Publish"/>

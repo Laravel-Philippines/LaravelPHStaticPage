@@ -13,14 +13,18 @@ body {
     width: 100%;
     text-align: center;
     background: url('http://i344.photobucket.com/albums/p334/ken_garcia/g.jpg') no-repeat center center scroll;
+    
+    /*
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    */
+    
 }
 
 .headline {
-    padding: 120px 0;
+    padding: 250px 0; /* padding: 120px 0; */
 }
 
 .headline h1 {

@@ -11,6 +11,7 @@
 |
 ******Resource controllers should be at the bottom********
 */
+/*
 Route::get('/', function () {
     return view('public/frontpage');
 });
@@ -18,6 +19,10 @@ Route::get('/', function () {
 Route::get('home', function () {
     return view('public/frontpage');
 });
+*/
+Route::get('/', 'HomeController@index');
+
+Route::get('home', 'HomeController@index');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -51,11 +56,19 @@ Route::get('dashboard', [
 
 //Events Routes
 // show new event form
- Route::get('new-event',['middleware' => 'auth', 'uses' => 'EventController@create' ]);
+Route::get('new-event',['middleware' => 'auth', 'uses' => 'EventController@create' ]);
 // save new event
-Route::post('new-event','EventController@store');
+Route::post('new-event',['middleware' => 'auth', 'uses' => 'EventController@store']);
 // edit
 Route::get('events/{slug}/edit',['middleware' => 'auth', 'uses' => 'EventController@edit' ]);
-
+Route::post('events/{slug}/edit',['middleware' => 'auth', 'uses' => 'EventController@update' ]);
+Route::get('events/{id}/delete',['middleware' => 'auth', 'uses' => 'EventController@destroy' ]);
 
 // Route::get('my-all-events','UserController@user_events_all');
+
+//Jobs Routes
+Route::get('new-job',['middleware' => 'auth', 'uses' => 'JobController@create' ]);
+Route::post('new-job',['middleware' => 'auth', 'uses' => 'JobController@store']);
+Route::get('jobs/{id}/{slug}/edit',['middleware' => 'auth', 'uses' => 'JobController@edit' ]);
+Route::post('jobs/{id}/{slug}/edit',['middleware' => 'auth', 'uses' => 'JobController@update' ]);
+Route::get('jobs/{id}/delete',['middleware' => 'auth', 'uses' => 'JobController@destroy' ]);

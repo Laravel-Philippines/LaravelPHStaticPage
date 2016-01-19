@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Event;
+use App\Job;
 use App\Http\Controllers\Controller;
 
 
@@ -52,7 +53,7 @@ class MemberDashboardController extends Controller
         $user = $request->user();
         $user_id = $user->id;
         $events = Event::where('user_id',$user_id)->get();
-        
+        $jobs = Job::where('user_id',$user_id)->get();
         // return var_dump($events);
         
         // $data = '';
@@ -61,7 +62,7 @@ class MemberDashboardController extends Controller
          //return(var_dump($user));
          //return $user->name;
          //return view('members.dashboardpage', ['user' => User::findOrFail($id)]);
-         return view('members.dashboardpage', ['user' => $user, 'events' => $events]);
+         return view('members.dashboardpage', ['user' => $user, 'events' => $events, 'jobs' => $jobs]);
          //    ->withPosts($posts)
          //    ;
     }

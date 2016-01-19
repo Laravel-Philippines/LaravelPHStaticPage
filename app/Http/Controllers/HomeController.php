@@ -3,20 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Event;
+use App\Job;
 
-class ProfileController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    
     public function index()
     {
-        //
+        $events = Event::where('user_id',$user_id)->get();
+        $jobs = Job::where('user_id',$user_id)->get();
+        
+        // return view('members.dashboardpage', ['user' => $user, 'events' => $events, 'jobs' => $jobs]);
+        
+        return view('public.frontpage', ['user' => $user, 'events' => $events, 'jobs' => $jobs]);
     }
 
     /**
@@ -46,13 +53,9 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-//    public function show($id)
-    public function show(Request $request)
+    public function show($id)
     {
-        $user = $request->user();
-        // var_dump($user);
-        // return $user->id;
-        
+        //
     }
 
     /**

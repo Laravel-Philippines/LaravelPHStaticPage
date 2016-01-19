@@ -3,10 +3,10 @@
 <head>
     <title>LaravelPH community - @yield('title')</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/css/one-page-wonder.css">
-    <link rel="stylesheet" href="../public/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../public/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-    <link rel="stylesheet" href="../public/css/custom.css">
+    <link rel="stylesheet" href="{{ asset('css/one-page-wonder.css') }}">
+    <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 </head>
 <body>
 
@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="" href="/"><img src="../img/laravel50px.png" alt="LaravelPH"></a>
+                <a class="" href="/"><img src="{{asset('img/laravel50px.png')}}" alt="LaravelPH"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -38,6 +38,9 @@
                             <a href="/auth/login">Login</a>
                         </li>
                     @else
+                        <li>   
+                            <a href="/dashboard">Dashboard</a>
+                        </li>
                         <li>   
                             <a href="/auth/logout">Logout</a>
                         </li>
@@ -70,8 +73,8 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   
-    <script type="text/javascript" src="../public/bower_components/moment/min/moment.min.js"></script>
-    <script type="text/javascript" src="../public/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="{{ asset('bower_components/moment/min/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
 
     <script type="text/javascript">
         $(function () {
@@ -79,10 +82,11 @@
                 inline: true,
                 sideBySide: true
             });
-                                                                       });});
+        });});
         $(function() {
             $("form:not(.filter) :input:visible:enabled:first").focus();
         });
+        $( '.headline-text' ).fadeOut(3000);
     </script>
 
 </body>
